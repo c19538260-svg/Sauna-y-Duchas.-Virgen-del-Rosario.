@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102b38">
+<title>Sauna Virgen del Rosario | Tu espacio de bienestar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--night:#081923;--deep:#102b38;--blue:#287fa8;--aqua:#65c8e8;--ice:#c7f0fb;--cream:#f4fbff;--muted:#b7cbd4;--gold:#d8c08b;--line:rgba(199,240,251,.18);--card:rgba(18,48,62,.76)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--night);color:var(--cream);font-family:"DM Sans",sans-serif;line-height:1.6;padding-left:94px}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;object-fit:cover}
+button,input,select,textarea{font:inherit}
+.wrap{width:min(1160px,92%);margin:auto}
+.topline{height:4px;background:linear-gradient(90deg,var(--blue),var(--ice),var(--gold))}
+header{position:sticky;top:0;z-index:30;background:rgba(8,25,35,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+/* Navegación lateral izquierda en columnas */
+.side-rail{position:fixed;left:0;top:0;bottom:0;width:94px;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px 8px;background:rgba(5,18,26,.96);border-right:1px solid var(--line);backdrop-filter:blur(16px)}
+.side-rail .rail-brand{font-family:"Playfair Display",serif;color:var(--ice);font-size:1.55rem;margin-bottom:12px}
+.side-rail a{width:72px;min-height:66px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;border:1px solid transparent;border-radius:14px;color:var(--muted);font-size:.68rem;line-height:1.15;transition:background .2s,color .2s,transform .2s}
+.side-rail a .rail-icon{font-size:1.2rem;color:var(--ice)}
+.side-rail a:hover,.side-rail a.active{background:#65c8e81a;border-color:rgba(101,200,232,.35);color:var(--cream);transform:translateX(2px)}
+.side-rail a.rail-book{background:linear-gradient(135deg,#236d8c,#17465e);border-color:var(--aqua);color:#fff}
+header nav{display:none}
+@media(max-width:720px){body{padding-left:0}.side-rail{width:auto;left:10px;right:10px;top:auto;bottom:10px;height:68px;flex-direction:row;justify-content:space-around;gap:2px;padding:5px;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 35px #0008}.side-rail .rail-brand{display:none}.side-rail a{width:auto;min-width:0;flex:1;min-height:54px;font-size:.58rem;padding:3px}.side-rail a .rail-icon{font-size:1.05rem}footer{padding-bottom:100px}}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;font-family:"Playfair Display",serif;font-size:1.12rem;line-height:1.1}
+.logo-mark {
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
+    display: block;
+    overflow: hidden;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+}
+
+.logo-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.logo small{display:block;font:600 .63rem "DM Sans",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+nav{display:flex;align-items:center;gap:23px}
+nav a{font-size:.86rem;color:var(--muted);transition:.2s}
+nav a:hover,nav a.active{color:var(--ice)}
+.nav-book,.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--aqua);border-radius:999px;padding:11px 19px;background:linear-gradient(135deg,#236d8c,#17465e);color:white;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.nav-book:hover,.button:hover{transform:translateY(-2px);box-shadow:0 8px 24px #65c8e833}
+.menu-toggle{display:none;border:1px solid var(--line);background:transparent;color:white;border-radius:12px;padding:9px 12px}
+.hero{min-height:650px;display:grid;align-items:center;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(5,18,25,.9) 0%,rgba(5,18,25,.63) 48%,rgba(5,18,25,.18) 100%),url("img/imagen4.jpeg") center/cover}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:140px;background:linear-gradient(transparent,var(--night))}
+.hero-content{position:relative;z-index:1;max-width:680px;padding:80px 0 105px}
+.kicker{display:flex;align-items:center;gap:12px;color:var(--ice);font-size:.76rem;letter-spacing:.19em;text-transform:uppercase;font-weight:700}
+.kicker:before{content:"";width:38px;height:1px;background:var(--gold)}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3{font-family:"Playfair Display",serif;font-weight:600;line-height:1.15}
+h1{font-size:clamp(3rem,7vw,5.7rem);margin:20px 0}
+h1 span{display:block;color:var(--ice);font-style:italic}
+.hero p{max-width:540px;color:#e1edf1;font-size:1.08rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.button.secondary{background:rgba(7,25,35,.45);border-color:rgba(244,251,255,.55)}
+.trust{display:flex;flex-wrap:wrap;gap:22px;margin-top:35px;color:#d5e7ed;font-size:.82rem}
+.trust span{display:flex;align-items:center;gap:8px}
+.trust b{color:var(--gold);font-size:1.1rem}
+section{padding:88px 0}
+.section-head{max-width:660px;margin:0 auto 42px;text-align:center}
+.section-head .kicker{justify-content:center}
+.section-head .kicker:before{display:none}
+.section-head h2{font-size:clamp(2.1rem,4vw,3.25rem);margin:13px 0}
+.section-head p{color:var(--muted);margin-bottom:0}
+.services{background:linear-gradient(180deg,var(--night),#0c222e 50%,var(--night))}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.service-card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--card);transition:transform .25s,border-color .25s}
+.service-card:hover{transform:translateY(-7px);border-color:var(--aqua)}
+.service-image{height:190px;position:relative;overflow:hidden}
+.service-image img{height:100%;transition:transform .6s}
+.service-card:hover img{transform:scale(1.06)}
+.price{position:absolute;left:13px;bottom:13px;background:rgba(5,22,30,.88);border:1px solid #9be2f3a6;color:var(--ice);padding:6px 11px;border-radius:99px;font-size:.75rem;font-weight:700}
+.service-body{padding:22px}
+.service-body h3{font-size:1.35rem;margin-bottom:9px}
+.service-body p{font-size:.9rem;color:var(--muted);min-height:68px}
+.text-link{color:var(--ice);font-size:.86rem;font-weight:700}
+.text-link span{display:inline-block;transition:transform .2s}
+.text-link:hover span{transform:translateX(5px)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:58px;align-items:center}
+.about-photo{position:relative;padding:0 26px 26px 0}
+.about-photo img{height:470px;border-radius:24px}
+.about-photo:after{content:"";position:absolute;right:0;bottom:0;width:60%;height:55%;border:1px solid var(--gold);border-radius:24px;z-index:-1}
+.about-copy h2{font-size:clamp(2.2rem,4vw,3.2rem);margin:15px 0}
+.about-copy p{color:var(--muted)}
+.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+.feature{display:flex;gap:12px;align-items:flex-start}
+.feature-icon{flex:0 0 38px;width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:#65c8e81a;color:var(--ice);border:1px solid var(--line)}
+.feature strong{display:block;font-size:.93rem}
+.feature small{color:var(--muted)}
+.quote{border-left:2px solid var(--gold);padding:9px 0 9px 18px;color:#dceaf0;font-family:"Playfair Display",serif;font-size:1.2rem;font-style:italic}
+.gallery{background:#0c222e}
+.gallery-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:220px 220px;gap:15px}
+.gallery-grid img{height:100%;border-radius:18px;cursor:pointer;transition:filter .2s,transform .3s}
+.gallery-grid img:hover{filter:brightness(1.1);transform:scale(.99)}
+.gallery-grid .large{grid-row:span 2}
+.visit-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px;align-items:stretch}
+.visit-card,.booking-card{border:1px solid var(--line);border-radius:22px;background:var(--card);padding:30px}
+.visit-card h3,.booking-card h3{font-size:1.7rem;margin-bottom:12px}
+.visit-card p{color:var(--muted)}
+.map-placeholder{height:190px;border-radius:15px;margin:20px 0;background:linear-gradient(135deg,#183e4e,#102b38);display:grid;place-items:center;text-align:center;border:1px solid var(--line);color:var(--ice);padding:20px}
+.map-placeholder span{font-size:2.2rem}
+.contact-line{display:flex;gap:12px;margin:15px 0;color:#dbeaf0}
+.contact-line b{color:var(--ice)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-size:.8rem;color:#d6e7ec}
+input,select,textarea{width:100%;padding:12px 13px;border-radius:11px;border:1px solid rgba(199,240,251,.2);background:#071923;color:white;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--aqua)}
+select option{background:#102b38}
+textarea{resize:vertical;min-height:85px}
+form .button{grid-column:1/-1;margin-top:4px}
+.form-note{font-size:.75rem;color:var(--muted);margin:0;grid-column:1/-1}
+footer{padding:27px 0;border-top:1px solid var(--line);background:#06131b}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:18px;color:var(--muted);font-size:.8rem}
+.footer-inner strong{color:var(--ice);font-family:"Playfair Display",serif;font-size:1rem}
+.socials{display:flex;gap:9px}
+.socials a{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--ice)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:960px){nav{gap:13px}.service-grid{grid-template-columns:repeat(2,1fr)}.about-grid{gap:35px}.hero{min-height:600px}}
+@media(max-width:720px){
+ .nav{min-height:70px}.menu-toggle{display:block}.nav-book{display:none}
+ nav{display:none;position:absolute;top:100%;left:0;right:0;padding:18px 4%;background:#081923;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
+ nav.open{display:flex}nav a{padding:12px 8px;border-bottom:1px solid var(--line)}
+ .hero{min-height:600px;background-position:58% center}.hero-content{padding:65px 0 95px}h1{font-size:3.3rem}
+ section{padding:65px 0}.service-grid{gap:12px}.service-image{height:155px}.service-body{padding:16px}.service-body p{min-height:100px;font-size:.84rem}
+ .about-grid,.visit-grid{grid-template-columns:1fr}.about-photo img{height:330px}.feature-list{gap:14px}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:190px 160px}.gallery-grid .large{grid-row:span 1;grid-column:span 2}
+ .visit-card,.booking-card{padding:22px}form{grid-template-columns:1fr}.field.full,form .button,.form-note{grid-column:auto}.footer-inner{flex-direction:column;text-align:center}
+}
+@media(max-width:400px){.service-grid{grid-template-columns:1fr}.service-image{height:200px}.service-body p{min-height:0}.trust{gap:12px}.feature-list{grid-template-columns:1fr}}
+
+/* Las fotografías giran al tocarlas */
+.service-image img,.gallery-grid img,.about-photo img{cursor:pointer;transform-style:preserve-3d;backface-visibility:visible}
+.service-image img.spin,.gallery-grid img.spin,.about-photo img.spin{animation:photoTurn .9s ease-in-out}
+@keyframes photoTurn{0%{transform:perspective(900px) rotateY(0) scale(1)}50%{transform:perspective(900px) rotateY(180deg) scale(.94);filter:brightness(.75)}100%{transform:perspective(900px) rotateY(360deg) scale(1);filter:brightness(1)}}
+section.section-highlight{animation:sectionPulse 1s ease}
+@keyframes sectionPulse{0%,100%{box-shadow:inset 0 0 0 rgba(101,200,232,0)}40%{box-shadow:inset 0 0 0 2px rgba(101,200,232,.24)}}
+
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<aside class="side-rail" aria-label="Menú lateral">
+  <div class="rail-brand">✧</div>
+  <a href="#inicio" class="active"><span class="rail-icon"></span><span>Inicio</span></a>
+  <a href="#servicios"><span class="rail-icon"></span><span>Servicios</span></a>
+  <a href="#nosotros"><span class="rail-icon"></span><span>Nosotros</span></a>
+  <a href="#galeria"><span class="rail-icon"></span><span>Galería</span></a>
+  <a href="#contacto"><span class="rail-icon"></span><span>Ubicación</span></a>
+  <a href="#reservas" class="rail-book"><span class="rail-icon"></span><span>Reservar</span></a>
+</aside>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#inicio" aria-label="Sauna Virgen del Rosario, inicio">
+      <span class="logo-mark"><img src="img/virgen_del_rosario.jpeg" alt="virgen"> </span>
+      <span>Sauna Virgen del Rosario<small>Bienestar · Calma · Privacidad</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-label="Abrir menú">☰ Menú</button>
+    <nav id="mainNav" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#nosotros">Nosotros</a><a href="#galeria">Galería</a><a href="#contacto">Ubicación</a>
+    </nav>
+    <a class="nav-book" href="#reservas">Reservar una visita ↗</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-content">
+      <h1>Sauna y Duchas.<br><span>Virgen del Rosario.</span></h1>
+      <div class="hero-actions">
+        <a class="button" href="#reservas">Reserva tu momento <span>↗</span></a>
+        <a class="button secondary" href="#servicios">Explorar servicios ↓</a>
+      </div>
+      <div class="trust"><span><b></b> Ambiente acogedor</span><span><b></b> Atención personalizada</span><span><b></b> Tu momento de calma</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Elige tu experiencia</div>
+      <h2>Los servicios que te ofrecemos</h2>
+    </div>
+    <div class="service-grid">
+      <article class="service-card reveal"><div class="service-image"><img src="img/sauna_individual.jpeg" alt="Ducha individual moderna" loading="lazy"><span class="price">Tarifa por consultar</span></div><div class="service-body"><h3>Ducha individual</h3><p>Un espacio privado y cómodo para disfrutar de tu tiempo sin apuros.</p><a class="text-link" href="#reservas" data-service="Ducha individual">Consultar disponibilidad <span>→</span></a></div></article>
+      <article class="service-card reveal"><div class="service-image"><img src="img/sauna_doble.jpeg" alt="Baño elegante para dos personas" loading="lazy"><span class="price">Tarifa por consultar</span></div><div class="service-body"><h3>Ducha doble</h3><p>Comparte un momento especial en un entorno íntimo y relajante.</p><a class="text-link" href="#reservas" data-service="Ducha doble">Consultar disponibilidad <span>→</span></a></div></article>
+      <article class="service-card reveal"><div class="service-image"><img src="img/sauna_familiar.jpeg" alt="Ambiente amplio y acogedor" loading="lazy">
+      <span class="price">Tarifa por consultar</span></div><div class="service-body"><h3>Familiar</h3><p>Más espacio para compartir y disfrutar con comodidad.</p><a class="text-link" href="#reservas" data-service="Jacuzzi">Consultar disponibilidad <span>→</span></a></div></article>
+      <article class="service-card reveal"><div class="service-image"><img src="img/jacuzzi.jpeg" alt="Jacuzzi moderna" loading="lazy"><span class="price">Tarifa por consultar</span></div><div class="service-body"><h3>Jacuzzi</h3><p>Un espacio privado y amplio para disfrutar en familia.</p><a class="text-link" href="#reservas" data-service="Ducha familiar">Consultar disponibilidad <span>→</span></a></div></article>
+      <article class="service-card reveal"><div class="service-image"><img src="img/hidromasaje.jpeg" alt="Hidromasaje moderna" loading="lazy"><span class="price">Tarifa por consultar</span></div><div class="service-body"><h3>Hidromasaje</h3><p>Un espacio privado y amplio.</p><a class="text-link" href="#reservas" data-service="Ducha individual">Consultar disponibilidad <span>→</span></a></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal"><img src="img/portada.jpeg" alt="Ambiente de spa con luz cálida" loading="lazy"></div>
+    <div class="about-copy reveal">
+      <h2>Sauna Virgen del Rosario.</h2>
+      <p>En Sauna Virgen del Rosario creemos que descansar también es una forma de cuidarse. Por eso buscamos ofrecer un ambiente agradable, privado y acogedor donde puedas hacer una pausa y disfrutar el presente.</p>
+      <p>Ven a relajarte después de un día largo, comparte un momento especial o simplemente regálate tiempo para ti.</p>
+      <div class="feature-list">
+        <div class="feature"><span class="feature-icon">✧</span><div><strong>Ambiente sereno</strong><small>Un espacio para bajar el ritmo.</small></div></div>
+        <div class="feature"><span class="feature-icon">◇</span><div><strong>Privacidad</strong><small>Comodidad en cada visita.</small></div></div>
+        <div class="feature"><span class="feature-icon">♡</span><div><strong>Buena atención</strong><small>Te recibimos con calidez.</small></div></div>
+        <div class="feature"><span class="feature-icon">☼</span><div><strong>Tu bienestar</strong><small>Tu tiempo, a tu manera.</small></div></div>
+      </div>
+      <div class="quote">“A veces, el mejor plan es detenerse y respirar.”</div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <div class="section-head reveal"><h2>Galería</h2></div>
+    <div class="gallery-grid reveal">
+      <img class="large" src="img/virgen_del_rosario.jpeg" alt="Zona de relajación" loading="lazy">
+      <img src="img/imagen2.jpeg" alt="Sauna con madera natural" loading="lazy">
+      <img src="img/imagen3.jpeg" alt="Ducha moderna" loading="lazy">
+      <img src="img/imagen4_4.jpeg" alt="Baño de estilo contemporáneo" loading="lazy">
+      <img src="img/portada.jpeg" alt="Interior elegante" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="kicker">Estamos para atenderte</div><h2>Planea tu visita</h2><p>Consulta las tarifas, horarios y disponibilidad antes de venir.</p></div>
+    <div class="visit-grid">
+      <div class="visit-card reveal">
+        <h3>Encuéntranos</h3>
+        <div class="map-placeholder">
+          <div><span>⌖</span><br><strong>Sauna Virgen del Rosario</strong><br>
+          <small></small><br>
+          <a class="btn btn-primary" href="https://maps.app.goo.gl/L4AcRzYW2MFXaMvQ9?g_st=aw" target="_blank" rel="noopener">Ver en Google Maps ↗</a></div>
+        </div>
+        <div class="contact-line"><span>📍</span><div><b>Dirección del sauna</b><br><span class="editable-location">VILLARROEL PEDRO FERRARI </span></div></div>
+        <div class="contact-line"><span>◷</span><div><b>Horario de atención</b><br>DE LUENES A DOMINGO HORA 11:00 A 20: 00</div></div>
+        <div class="contact-line"><span>☎</span><div><b>Reservas</b><br></div></div>
+      </div>
+      <div class="booking-card reveal" id="reservas">
+        <h3>Solicita tu reserva</h3>
+        <p style="color:var(--muted);font-size:.9rem">Cuéntanos qué experiencia buscas. Te ayudaremos a coordinar tu visita.</p>
+        <form id="bookingForm">
+          <div class="field"><label for="name">Nombre completo</label><input id="name" name="name" autocomplete="name" placeholder="Tu nombre" required></div>
+          <div class="field"><label for="phone">Teléfono</label><input id="phone" name="phone" autocomplete="tel" placeholder="Tu número" required></div>
+          <div class="field"><label for="service">Servicio</label><select id="service" name="service" required><option value="">Selecciona una opción</option><option>Sauna</option><option>Ducha individual</option><option>Ducha doble</option><option>Ducha familiar</option></select></div>
+          <div class="field"><label for="people">Número de personas</label><select id="people" name="people"><option>1 persona</option><option>2 personas</option><option>3 personas</option><option>4 o más personas</option></select></div>
+          <div class="field"><label for="date">Fecha preferida</label><input id="date" name="date" type="date" required></div>
+          <div class="field"><label for="time">Hora preferida</label><input id="time" name="time" type="time" required></div>
+          <div class="field full"><label for="message">Mensaje adicional (opcional)</label><textarea id="message" name="message" placeholder="¿Tienes alguna consulta?"></textarea></div>
+          <button class="button" type="submit">Espera la confirmacion</button>
+          <p class="form-note">La solicitud no confirma la reserva. El establecimiento deberá confirmar la disponibilidad.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap footer-inner"><div><strong>Sauna Virgen del Rosario</strong><br>Un espacio para respirar y renovar tu energía.</div><div>© <span id="year"></span> · Todos los derechos reservados</div><div class="socials"><a href="#inicio" aria-label="Inicio">⌂</a><a href="#contacto" aria-label="Contacto">✉</a><a href="#reservas" aria-label="Reservas">↗</a></div></div></footer>
+
+<script>
+
+// Giro de imágenes al tocarlas o activarlas con teclado.
+document.querySelectorAll('.service-image img,.gallery-grid img,.about-photo img').forEach(img=>{
+  img.tabIndex=0;
+  const turn=()=>{
+    img.classList.remove('spin');
+    void img.offsetWidth;
+    img.classList.add('spin');
+  };
+  img.addEventListener('click',turn);
+  img.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();turn();}});
+  img.addEventListener('animationend',()=>img.classList.remove('spin'));
+});
+// El menú lateral indica la sección seleccionada y resalta el contenido al llegar.
+const railLinks=[...document.querySelectorAll('.side-rail a[href^="#"]')];
+railLinks.forEach(link=>link.addEventListener('click',()=>{
+  railLinks.forEach(item=>item.classList.remove('active'));
+  link.classList.add('active');
+  const target=document.querySelector(link.getAttribute('href'));
+  if(target){target.classList.remove('section-highlight');void target.offsetWidth;target.classList.add('section-highlight');}
+}));
+const sectionObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const current=railLinks.find(a=>a.getAttribute('href')==='#'+entry.target.id);
+      if(current){railLinks.forEach(a=>a.classList.remove('active'));current.classList.add('active');}
+    }
+  });
+},{rootMargin:'-35% 0px -55% 0px'});
+document.querySelectorAll('main section[id]').forEach(section=>sectionObserver.observe(section));
+
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+menuToggle.addEventListener('click', () => {
+  const open = mainNav.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(open));
+  menuToggle.textContent = open ? '✕ Cerrar' : '☰ Menú';
+});
+mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  mainNav.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.textContent = '☰ Menú';
+}));
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.getElementById('year').textContent = new Date().getFullYear();
+document.querySelectorAll('[data-service]').forEach(link => link.addEventListener('click', () => {
+  document.getElementById('service').value = link.dataset.service;
+}));
+document.getElementById('bookingForm').addEventListener('submit', event => {
+  event.preventDefault();
+  // Reemplaza este número con el WhatsApp real del negocio, incluyendo código de país y solo dígitos.
+  const WHATSAPP_SAUNA = '72341608';
+  const data = new FormData(event.currentTarget);
+  const msg = [
+    'Hola, quiero consultar una reserva en Sauna Virgen del Rosario.',
+    `Nombre: ${data.get('name')}`,
+    `Teléfono: ${data.get('phone')}`,
+    `Servicio: ${data.get('service')}`,
+    `Personas: ${data.get('people')}`,
+    `Fecha: ${data.get('date')}`,
+    `Hora: ${data.get('time')}`,
+    data.get('message') ? `Mensaje: ${data.get('message')}` : ''
+  ].filter(Boolean).join('\n');
+  if (WHATSAPP_SAUNA.includes('X')) {
+    alert('Antes de usar las reservas, edita el archivo HTML y cambia 75705994 por el número real de WhatsApp del sauna.');
+    return;
+  }
+  window.open(`https://wa.me/${WHATSAPP_SAUNA}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+});
+</script>
+</body>
+</html>
